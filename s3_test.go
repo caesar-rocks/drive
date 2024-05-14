@@ -5,9 +5,6 @@ import (
 	"math/rand"
 	"os"
 	"testing"
-
-	// Reads .env file and loads environment variables
-	_ "github.com/joho/godotenv/autoload"
 )
 
 var s3Client = &S3{
