@@ -9,3 +9,11 @@
 </div>
 
 This repo contains premade storage drivers, that implement the [`Filesystem`](./drive.go) interface, for the Caesar Go Framework.
+
+## Suppported drivers
+
+- [ ] Local
+
+- [x] AWS S3
+
+- [ ] Google Cloud Storage
