@@ -8,7 +8,7 @@ type FileSystem interface {
 	Put(string, []byte) error
 	Get(string) ([]byte, error)
 	GetURL(string) (string, error)
-	GetSignedURL(string) (string, error)
+	GetSignedURL(string, int64) (string, error)
 	Delete(string) error
 }
 
