@@ -18,9 +18,9 @@ func NewDrive(fileSystems map[string]FileSystem) *Drive {
 	}
 }
 
-func (d *Drive) Use(fileSystem string) *FileSystem {
+func (d *Drive) Use(fileSystem string) FileSystem {
 	if fs, ok := d.FileSystems[fileSystem]; ok {
-		return &fs
+		return fs
 	}
 
 	return nil
