@@ -33,7 +33,7 @@ func (s *S3) getS3ServiceClient() (*s3.Client, error) {
 
 	svc := s3.NewFromConfig(sdkConfig, func(o *s3.Options) {
 		o.BaseEndpoint = aws.String(s.Endpoint)
-		o.Region = "auto"
+		o.Region = s.Region
 	})
 
 	return svc, nil
