@@ -12,11 +12,12 @@ import (
 )
 
 type S3 struct {
-	Key      string
-	Secret   string
-	Region   string
-	Endpoint string
-	Bucket   string
+	Key      	   string
+	Secret   	   string
+	Region   	   string
+	Endpoint 	   string
+	Bucket   	   string
+	ForcePathStyle bool
 }
 
 func (s *S3) getS3ServiceClient() (*s3.Client, error) {
@@ -33,7 +34,9 @@ func (s *S3) getS3ServiceClient() (*s3.Client, error) {
 
 	svc := s3.NewFromConfig(sdkConfig, func(o *s3.Options) {
 		o.BaseEndpoint = aws.String(s.Endpoint)
-		o.Region = s.Region
+		if s.ForcePathStyle {
+			o.UsePathStyle = true
+		}
 	})
 
 	return svc, nil
